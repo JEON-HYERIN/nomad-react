@@ -14,6 +14,7 @@ function App() {
     setTodos(currentArray => [todo, ...currentArray]);
   }; 
   console.log(todos);
+  console.log(todos.map((item, index) => <li key={index}>{item}</li>));
   return (
     <div>
       <h1>My Todos ({todos.length})</h1>
@@ -21,6 +22,10 @@ function App() {
         <input type="text" onChange={onChange} value={todo} placeholder="Write your to do..." />
         <button>Add To Do</button>
       </form>
+      <hr />
+      <ul>
+        {todos.map((item, index) => <li key={index}>{item}</li>)}
+      </ul>
     </div>
   );
 }
