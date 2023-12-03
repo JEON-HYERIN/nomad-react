@@ -11,7 +11,7 @@ function App() {
         setLoading(false);
       });
   }, []);
-
+  console.log(coins);
   return (
     <div>
       <h1>The Coins! {loading ? '' : `(${coins.length})`}</h1>
@@ -20,7 +20,7 @@ function App() {
       ) : (
         <select>
           {coins.map((coin) => (
-            <option>
+            <option key={coin.id}>
               {coin.name} ({coin.symbol}): ${coin.quotes.USD.price} USD
             </option>
           ))}
